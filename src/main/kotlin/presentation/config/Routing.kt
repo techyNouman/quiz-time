@@ -1,6 +1,8 @@
 package com.example.presentation.config
 
+import com.example.presentation.routes.quiz_question.deleteQuizQuestionById
 import com.example.presentation.routes.quiz_question.getAllQuizQuestions
+import com.example.presentation.routes.quiz_question.getQuizQuestionById
 import com.example.presentation.routes.quiz_question.upsertQuizQuestions
 import com.example.presentation.routes.root
 import io.ktor.server.application.*
@@ -11,5 +13,7 @@ fun Application.configureRouting(){
        root()
         getAllQuizQuestions()
         upsertQuizQuestions()
+        deleteQuizQuestionById()
+        getQuizQuestionById()
     }
 }
