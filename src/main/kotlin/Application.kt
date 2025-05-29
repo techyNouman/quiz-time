@@ -16,4 +16,4 @@ fun Application.module() {
     configureRouting()
 }
 
-val quizQuestions = mutableListOf<QuizQuestion>()
+

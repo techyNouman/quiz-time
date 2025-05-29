@@ -1,15 +1,33 @@
 package com.example.presentation.routes.quiz_question
 
-import com.example.quizQuestions
+import com.example.domain.QuizQuestionRepository
+import io.ktor.http.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
-fun Route.getQuizQuestionById() {
+fun Route.getQuizQuestionById(
+    repository: QuizQuestionRepository
+) {
     get(path = "/quiz/questions/{questionId}") {
         val id = call.parameters["questionId"]
-        val question = quizQuestions.find { it.id == id }
+        if (id.isNullOrBlank()){
+            call.respond(
+                message = "Question id required",
+                status = HttpStatusCode.BadRequest
+            )
+            return@get
+        }
+        val question = repository.getQuestionById(id)
         if (question != null) {
-            call.respond(question)
+            call.respond(
+                message = question,
+                status = HttpStatusCode.OK
+            )
+        }else{
+            call.respond(
+                message = "Question not found",
+                status = HttpStatusCode.NotFound
+            )
         }
     }
 }
