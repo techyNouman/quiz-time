@@ -2,7 +2,7 @@ package com.example.presentation.config
 
 import com.example.data.database.DatabaseFactory
 import com.example.data.repository.QuizQuestionRepositoryImpl
-import com.example.domain.QuizQuestionRepository
+import com.example.domain.repository.QuizQuestionRepository
 import com.example.presentation.routes.quiz_question.deleteQuizQuestionById
 import com.example.presentation.routes.quiz_question.getAllQuizQuestions
 import com.example.presentation.routes.quiz_question.getQuizQuestionById

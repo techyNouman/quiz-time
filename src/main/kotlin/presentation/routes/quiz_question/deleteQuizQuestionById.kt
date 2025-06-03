@@ -1,6 +1,6 @@
 package com.example.presentation.routes.quiz_question
 
-import com.example.domain.QuizQuestionRepository
+import com.example.domain.repository.QuizQuestionRepository
 import io.ktor.http.*
 import io.ktor.server.response.*
 import io.ktor.server.routing.*
